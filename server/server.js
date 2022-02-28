@@ -1,6 +1,7 @@
 import config from './../config/config';
 import app from './express';
 import mongoose from 'mongoose';
+const {TextDecoder, TextEncoder} = require("util");
 
 app.listen(config.port, (err) => {
     if (err) {
