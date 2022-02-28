@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import crypto from 'crpyto';
+import crypto from 'crypto';
 
 const UserSchema = new mongoose.Schema({
     name: {
