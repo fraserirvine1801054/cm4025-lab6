@@ -27,8 +27,7 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-const userModel = mongoose.model('User', UserSchema);
-userModel.createIndexes();
+
 
 UserSchema.virtual('password').set(function(password){
     this._password = password;
@@ -64,5 +63,7 @@ UserSchema.path('hashed_password').validate(function(v){
     }
 }, null);
 
+const userModel = mongoose.model('User', UserSchema);
+userModel.createIndexes();
 
 export default userModel;

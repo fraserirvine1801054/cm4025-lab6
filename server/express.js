@@ -20,6 +20,8 @@ app.use(compress());
 app.use(helmet());
 app.use(cors());
 
+app.use('/', userRoutes);
+
 app.get('/', (req,res) => {
     res.status(200).send(Template());
 });
