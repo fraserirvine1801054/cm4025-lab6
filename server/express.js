@@ -25,6 +25,13 @@ const app = express();
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
 devBundle.compile(app);
 
+//a proxy
+let proxy = require('express-http-proxy');
+
+app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));
+
+
+
 //parse body params and attach them to the req.body
 
 app.use(bodyParser.json());
@@ -80,6 +87,8 @@ app.use((err,req,res,next) => {
         console.log(err);
     }
 });
+
+
 
 
 
