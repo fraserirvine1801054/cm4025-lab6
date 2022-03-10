@@ -2,6 +2,7 @@ import React from 'react';
 import {Route,Switch} from 'react-router-dom';
 import Home from './core/Home';
 import Users from './user/Users';
+import UserAdmin from './user/UsersAdmin';
 import Menu from './core/Menu';
 import Signup from './user/Signup';
 import Signin from './auth/Signin';
@@ -16,6 +17,7 @@ const MainRouter = () => {
             <Switch>
                 <Route exact path="/"component={Home}/>
                 <Route path="/users" component={Users}/>
+                <Route path="/useradmin/:userId" component={UserAdmin}/>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/signin" component={Signin}/>
                 <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
