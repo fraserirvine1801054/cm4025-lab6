@@ -13,34 +13,10 @@ mongoose.connection.on('error', err => {
 });
 
 
-if (config.isHttps === "true") {
-
-    https.createServer(
-        {
-            key: fs.readFileSync(config.keyPath),
-            cert: fs.readFileSync(config.certPath),
-        },
-        app
-    )
-        .listen(config.port, (err) => {
-            console.info('Database is at %s.', config.mongoUri);
-            if (err) {
-                console.log(err);
-            }
-            console.info('Https Server started on port %s.', config.port);
-        });
-
-} else {
-    app.listen(config.port, (err) => {
-        console.info('Database is at %s.', config.mongoUri);
-        if (err) {
-            console.log(err);
-        }
-        console.info('Server started on port %s.', config.port);
-    });
-}
-
-
-
-
-
+app.listen(config.port, (err) => {
+    console.info('Database is at %s.', config.mongoUri);
+    if (err) {
+        console.log(err);
+    }
+    console.info('Server started on port %s.', config.port);
+});
