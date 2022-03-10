@@ -5,6 +5,9 @@ const config = {
     mongoUri : process.env.MONGODB_URI || 
         process.env.MONGO_HOST ||
         'mongodb://' + (process.env.IP || '127.0.0.1') + ":" +
-        (process.env.MONGO_PORT || '27017') + '/mydb/'
+        (process.env.MONGO_PORT || '27017') + '/mydb/',
+    isHttps : process.env.IS_HTTPS || "false",
+    keyPath : process.env.KEY_PATH,
+    certPath : process.env.CERT_PATH
 }
 export default config;
